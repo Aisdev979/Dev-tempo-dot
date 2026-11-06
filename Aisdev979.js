@@ -25,7 +25,7 @@ You are still leveling up
 
 Ask any questions here, we’ll assist you.
   Deadline: 24 hours
-@⁨all⁩
+
   * */
 
 //get users name and github handle
