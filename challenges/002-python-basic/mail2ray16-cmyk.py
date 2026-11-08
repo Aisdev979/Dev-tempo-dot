@@ -1,10 +1,11 @@
 import random
+
+
 user_name = input('Your Github handle: ')
 print(f'welcome {user_name} to the guessing game')
-
+random_number = random.randint(1,10)
 guess_count = 0
 while True:
-    random_number = random.randint(1,10)
     user_guess = int(input('Guess between 1-10: '))
     guess_count +=1
     if user_guess == '':
