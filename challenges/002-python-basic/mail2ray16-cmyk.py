@@ -6,10 +6,12 @@ print(f'welcome {user_name} to the guessing game')
 random_number = random.randint(1,10)
 guess_count = 0
 while True:
-    user_guess = int(input('Guess between 1-10: '))
     guess_count +=1
-    if user_guess == '':
-        print('Pls input a valid number')
+    try:
+        user_guess = int(input('Guess between 1-10: '))
+    except ValueError:
+        print('Pls enter a valid number')
+        continue
     elif user_guess > random_number:
         print('Too high')
     elif user_guess < random_number:
