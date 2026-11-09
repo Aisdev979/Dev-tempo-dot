@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Basics</title>
+</head>
+<body>
+  <p id="msg">Click the button.</p>
+  <button id="btn">Click me</button>
+
+  <script>
+    // Change paragraph text on click and include the user's name
+    document.getElementById("btn").onclick = function () {
+      var name = prompt("What is your name?");
+      document.getElementById("msg").textContent = "Hello, " + name + "!";
+      // Bonus: change the background color
+      document.body.style.background = "lightblue";
+    };
+  </script>
+</body>
+</html>
