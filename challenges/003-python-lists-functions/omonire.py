@@ -1,3 +1,5 @@
+# Engineered by Omonire (github.com/omonire)
+
 # List of at least 5 numbers
 nums = [4, 8, 1, 9, 3]
 
