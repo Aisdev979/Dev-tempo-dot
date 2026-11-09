@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Engineered by Omonire (github.com/omonire) -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Developer Profile</title>
+  <style>
+    /* Flexbox centers the card on the screen */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #eef1f5;
+      font-family: system-ui, sans-serif;
+    }
+
+    /* Card: shadow, rounded corners, hover lift */
+    .card {
+      background: #fff;
+      width: 90%;
+      max-width: 320px;
+      padding: 24px;
+      text-align: center;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+      transition: transform .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card a {
+      color: #0b6bcb;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    /* Skill badges */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .skills span {
+      background: #0b6bcb;
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <header>
+      <h1>Omonire</h1>
+      <a href="https://github.com/omonire" target="_blank">@omonire</a>
+    </header>
+    <p>Backend developer learning to build for the web.</p>
+    <section class="skills">
+      <span>Python</span>
+      <span>JavaScript</span>
+      <span>HTML</span>
+    </section>
+  </main>
+</body>
+</html>
