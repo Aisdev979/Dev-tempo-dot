@@ -61,7 +61,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for full details.
 
 ## Community
 
-- WhatsApp Group: Development Playground
+- WhatsApp Group: [Development Playground](https://chat.whatsapp.com/JTuucOUlS5t2zDRjr6XkzF?s=cl&p=a&mlu=4&ilr=4&iam=2) 
 - Website: [testers.devtem.org](https://testers.devtem.org)
 - Contact: safetyunion5550@gmail.com
 
