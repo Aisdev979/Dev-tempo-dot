@@ -1,20 +1,24 @@
-import random
+#Get the sum of all numbers
+def sum_numbers(numbers):
+    total = sum(numbers)
+    return total
 
-
-user_name = input('Your Github handle: ')
-print(f'welcome {user_name} to the guessing game')
-random_number = random.randint(1,10)
-guess_count = 0
-while True:
-    user_guess = int(input('Guess between 1-10: '))
-    guess_count +=1
-    if user_guess == '':
-        print('Pls input a valid number')
-    elif user_guess > random_number:
-        print('Too high')
-    elif user_guess < random_number:
-        print('Too low')
-    else:
-        print('You guessed right')
-        print(f'Total try: {guess_count}')
-        break
+#Get the maximum numbers    
+def max_numbers(numbers):
+    maximum_numbers = max(numbers)  
+    return maximum_numbers
+    
+    
+#Get the lowest number
+def low_number(numbers):
+    lowest_num = min(numbers)
+    return lowest_num
+ 
+       
+numbers = (1,2,3,4,5)
+total = sum_numbers(numbers)
+print(f'Total numbers = {total}')
+max_no = max_numbers(numbers)
+print(f'Maximum numbers = {max_no}')
+lowest_no = low_number(numbers)
+print(f'Lowest number = {lowest_no}')
