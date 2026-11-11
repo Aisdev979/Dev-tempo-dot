@@ -1,0 +1,95 @@
+/* Engineered by Omonire (github.com/omonire) */
+
+/* Center the card on the page */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 60px;
+  background: #eef1f5;
+  font-family: system-ui, sans-serif;
+}
+
+/* Card: shadow, rounded corners */
+.card {
+  background: #fff;
+  width: 90%;
+  max-width: 420px;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Input + button on one line */
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+#itemInput {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #cfd6e0;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+/* Add button */
+#addBtn {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #0b6bcb;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#addBtn:hover {
+  background: #0958a8;
+}
+
+/* List styling */
+#list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+/* Each task row */
+#list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background: #f5f7fa;
+  border-radius: 8px;
+}
+
+/* Delete button inside each row */
+#list li button {
+  border: 0;
+  background: #d64545;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#list li button:hover {
+  background: #b93a3a;
+}
+
+/* Empty message */
+.empty {
+  text-align: center;
+  color: #8a94a6;
+}
