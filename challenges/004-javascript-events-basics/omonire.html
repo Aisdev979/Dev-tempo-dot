@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- Engineered by Omonire (github.com/omonire) -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Events Basics</title>
+  <style>
+    /* Simple page styling */
+    body {
+      font-family: system-ui, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+      background: #eef1f5;
+      transition: background .3s;
+    }
+
+    button {
+      padding: 10px 18px;
+      border: 0;
+      border-radius: 8px;
+      background: #0b6bcb;
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0958a8;
+    }
+  </style>
+</head>
+<body>
+  <p id="msg">Click the button below.</p>
+  <button id="btn">Click me</button>
+
+  <script>
+    // Grab the elements we need
+    var btn = document.getElementById("btn");
+    var msg = document.getElementById("msg");
+
+    // Track how many times the button was clicked
+    var clicks = 0;
+
+    // Listen for the button click
+    btn.addEventListener("click", function () {
+      clicks = clicks + 1;
+
+      // Show an alert with a message
+      alert("You clicked the button " + clicks + " time(s)!");
+
+      // Change the text of the paragraph
+      msg.textContent = "Nice! You clicked " + clicks + " time(s).";
+
+      // Bonus: change the background color of the page
+      document.body.style.background = "lightblue";
+    });
+  </script>
+</body>
+</html>
