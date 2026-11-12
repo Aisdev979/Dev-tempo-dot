@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your To Do</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="todo">
+    <h1 class="todo__title">Your To Do</h1>
+    <figure class="quote">
+        <blockquote class="quote__text">“Doing what you love is the cornerstone of having abundance in your life.”</blockquote>
+        <figcaption class="quote__author">Wayne Dyer</figcaption>
+    </figure>
+  </header>
+
+  <main class="todo">
+
+    <form class="task-form" action="#" autocomplete="off">
+      <label class="visually-hidden" for="new-task">New task</label>
+      <input class="task-form__input" id="new-task" name="task" type="text" placeholder="Add new task" required>
+      <button id="task-form__submit" class="task-form__submit" type="submit" aria-label="Add task"></button>
+    </form>
+
+    <ul class="task-list" id="task-list"></ul>
+  </main>
+
+  <footer class="todo">
+    <small>Built by Aisdev with 😘</small>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
