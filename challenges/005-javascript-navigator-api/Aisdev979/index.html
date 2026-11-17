@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0d2b2a" />
+
+    <title>What your browser tells every site</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body class="page">
+    <a class="page__skip-link" href="#browser-details"
+      >Skip to browser details</a
+    >
+    <div class="page__layout">
+      <header class="page-intro">
+        <h1 class="page-intro__title">What your browser tells every site</h1>
+      </header>
+      <main class="page__main" id="browser-details">
+        <h2 class="visually-hidden">Browser details</h2>
+        <dl class="readout">
+          <div class="readout__row">
+            <dt class="readout__label">User agent</dt>
+            <dd
+              class="readout__value readout__value--raw"
+              id="user-agent-value"
+            >
+              Detecting…
+            </dd>
+          </div>
+          <div class="readout__row">
+            <dt class="readout__label">Platform</dt>
+            <dd class="readout__value" id="platform-value">Detecting…</dd>
+          </div>
+          <div class="readout__row">
+            <dt class="readout__label">Language</dt>
+            <dd class="readout__value" id="language-value">Detecting…</dd>
+          </div>
+          <div class="readout__row">
+            <dt class="readout__label">Cookies</dt>
+            <dd class="readout__value">
+              <span
+                class="status-indicator status-indicator--pending"
+                id="cookies-status"
+              >
+                <span
+                  class="status-indicator__marker"
+                  aria-hidden="true"
+                ></span>
+                <span class="status-indicator__label" id="cookies-status-label"
+                  >Checking…</span
+                >
+              </span>
+            </dd>
+          </div>
+          <div class="readout__row">
+            <dt class="readout__label">Connection</dt>
+            <dd class="readout__value">
+              <span
+                class="status-indicator status-indicator--pending"
+                id="connection-status"
+                aria-live="polite"
+              >
+                <span
+                  class="status-indicator__marker"
+                  aria-hidden="true"
+                ></span>
+                <span
+                  class="status-indicator__label"
+                  id="connection-status-label"
+                  >Checking…</span
+                >
+              </span>
+            </dd>
+          </div>
+        </dl>
+      </main>
+    </div>
+    <script src="./script.js" defer></script>
+  </body>
+</html>
