@@ -1,0 +1,6 @@
+sent = input("Write a sentence: ")
+edit_sent = input("What part of your sentence do you want to edit? ")
+new_word = input("What is you new word? ")
+sent.replace(edit_sent, new_word)
+replace = sent.replace(edit_sent, new_word)
+print(replace)
