@@ -1,0 +1,9 @@
+sentence = input("Make a sentence? ")
+word_to_replace = input("which word do you want to change? ")
+if word_to_replace in sentence:
+    replace_with = input("Replace with? ")
+    new_sentence = sentence.replace(word_to_replace,replace_with)
+    print(new_sentence)
+else:
+    print("Word not found!!!")
+￼Enter
