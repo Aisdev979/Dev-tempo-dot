@@ -1,8 +1,8 @@
 const nameInput = document.querySelector("#full-name");
-const emailInput = document.querySelector("#Email");
-const nameError = document.querySelector("#error");
-const emailError = document.querySelector("#error2");
-const waitlistSubmitBtn = document.querySelector("#WaitlistBtn");
+const emailInput = document.querySelector("#email");
+const nameError = document.querySelector("#full-name-error");
+const emailError = document.querySelector("#email-error");
+const waitlistSubmitBtn = document.querySelector("#waitlist-submit-btn");
 
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 

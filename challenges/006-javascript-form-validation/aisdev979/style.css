@@ -17,11 +17,11 @@
     box-sizing: border-box;
 }
 
-.body {
+.waitlist-page {
     background-color: var(--shadow-grey);
     color: var(--pale-slate);
     font-family: "Plus Jakarta Sans", sans-serif;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
