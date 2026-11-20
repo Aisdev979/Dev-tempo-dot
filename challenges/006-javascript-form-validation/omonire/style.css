@@ -1,0 +1,76 @@
+/* Engineered by Omonire (github.com/omonire) */
+
+/* Center the card on the page */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 60px;
+  background: #eef1f5;
+  font-family: system-ui, sans-serif;
+}
+
+/* Card: shadow, rounded corners */
+.card {
+  background: #fff;
+  width: 90%;
+  max-width: 420px;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Labels sit above each field */
+label {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #cfd6e0;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+/* Submit button */
+#submitBtn {
+  width: 100%;
+  padding: 10px 16px;
+  margin-top: 20px;
+  border: 0;
+  border-radius: 8px;
+  background: #0b6bcb;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#submitBtn:hover {
+  background: #0958a8;
+}
+
+/* Message shown after submitting */
+#message {
+  text-align: center;
+  font-size: 14px;
+}
+
+#message.error {
+  color: #d64545;
+}
+
+#message.success {
+  color: #1a8a4a;
+}
