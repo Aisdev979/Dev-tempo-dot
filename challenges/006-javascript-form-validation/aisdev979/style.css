@@ -18,10 +18,35 @@
 }
 
 .waitlist-page {
-    background-color: var(--shadow-grey);
+    background-color: var(--ink-black);
     color: var(--pale-slate);
     font-family: "Plus Jakarta Sans", sans-serif;
-    /* display: flex;
+    font-optical-sizing: auto;
+}
+
+.site-header,
+.waitlist-main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.site-header__brand {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--pale-slate);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-block: 1em;
+}
+
+.waitlist-main {
+    width: 80%;
+    display: flex;
     align-items: center;
-    justify-content: center; */
+    justify-content: center;
+}
+
+.waitlist-container {
+    width: 50%;
+    border: 2px solid red;
 }

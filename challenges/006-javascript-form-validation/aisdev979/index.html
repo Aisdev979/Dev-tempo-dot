@@ -27,52 +27,54 @@
     </header>
 
     <main class="waitlist-main">
-      <section class="waitlist-hero">
-        <h1 class="waitlist-hero__title">Join the Waitlist</h1>
-        <p class="waitlist-hero__description">
-          Join the pilot program for our centralized resolution engine.
-          Transparent tracking for students, priority escalation workflows for
-          Course Reps, and automated department reporting.
-        </p>
-      </section>
+      <div class="waitlist-container">
+        <section class="waitlist-hero">
+            <h1 class="waitlist-hero__title">Join the Waitlist</h1>
+            <p class="waitlist-hero__description">
+            Join the pilot program for our centralized resolution engine.
+            Transparent tracking for students, priority escalation workflows for
+            Course Reps, and automated department reporting.
+            </p>
+        </section>
 
-      <form class="waitlist-form" id="waitlist-form" novalidate>
-        <div class="form-field">
-          <label class="form-field__label" for="full-name">
-            Full name <span aria-hidden="true">*</span>
-          </label>
-          <input
-            class="form-field__input"
-            type="text"
-            id="full-name"
-            name="fullName"
-            autocomplete="name"
-            required
-            aria-describedby="full-name-error"
-          />
-          <p class="form-field__error" id="full-name-error" aria-live="polite"></p>
-        </div>
+        <form class="waitlist-form" id="waitlist-form" novalidate>
+            <div class="form-field">
+            <label class="form-field__label" for="full-name">
+                Full name <span aria-hidden="true">*</span>
+            </label>
+            <input
+                class="form-field__input"
+                type="text"
+                id="full-name"
+                name="fullName"
+                autocomplete="name"
+                required
+                aria-describedby="full-name-error"
+            />
+            <p class="form-field__error" id="full-name-error" aria-live="polite"></p>
+            </div>
 
-        <div class="form-field">
-          <label class="form-field__label" for="email">
-            Email <span aria-hidden="true">*</span>
-          </label>
-          <input
-            class="form-field__input"
-            type="email"
-            id="email"
-            name="email"
-            autocomplete="email"
-            required
-            aria-describedby="email-error"
-          />
-          <p class="form-field__error" id="email-error" aria-live="polite"></p>
-        </div>
+            <div class="form-field">
+            <label class="form-field__label" for="email">
+                Email <span aria-hidden="true">*</span>
+            </label>
+            <input
+                class="form-field__input"
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+                aria-describedby="email-error"
+            />
+            <p class="form-field__error" id="email-error" aria-live="polite"></p>
+            </div>
 
-        <button class="btn btn--primary" type="submit" id="waitlist-submit-btn">
-          Join waitlist
-        </button>
-      </form>
+            <button class="btn btn--primary" type="submit" id="waitlist-submit-btn">
+            Join waitlist
+            </button>
+        </form>
+      </div>
     </main>
 
     <script src="./main.js"></script>
