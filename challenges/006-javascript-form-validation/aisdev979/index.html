@@ -1,11 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Validation</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0d2b2a" />
+
+    <title>Campus Resolve - Waitlist</title>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="body">
+    <header>
+      <div>
+        <a class="" href="#">
+          <span class=""> CAMPUS RESOLV </span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h1>Join the Waitlist</h1>
+        <p>
+          Join the pilot program for our centralized resolution engine.
+          Transparent tracking for students, priority escalation workflows for
+          Course Reps, and automated department reporting.
+        </p>
+      </section>
+
+      <form action="">
+        <div>
+            <label for="full-name">FullName <span>*</span></label>
+            <input type="text" name="full-name" id="full-name">
+            <P id="error"></P>
+        </div>
+        <div>
+            <label for="Email">Email <span>*</span></label>
+            <input type="email" name="Email" id="Email">
+            <P id="error2"></P>
+        </div>
+        <button type="submit" value="Submit" id="WaitlistBtn">Submit</button>
+      </form>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
 </html>

@@ -1,3 +1,27 @@
+:root {
+    /* CSS HEX */
+    --periwinkle: #CCBDFEff;
+    --true-cobalt: #2D2791ff;
+    --ink-black: #0F111Dff;
+    --soft-periwinkle: #8A8DFEff;
+    --pale-slate: #C9CCDBff;
+    --shadow-grey: #191D28ff;
+    --dim-grey: #656774ff;
+}
+
+::after,
+::before,
 * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    background-color: var(--shadow-grey);
+    color: var(--pale-slate);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
