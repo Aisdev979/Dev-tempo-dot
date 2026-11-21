@@ -1,0 +1,173 @@
+:root {
+    --midnight-violet: #18162Aff;
+    --deep-navy: #131C4Cff;
+    --soft-periwinkle: #7E7DD9ff;
+    --twilight-indigo: #242F67ff;
+    --lavender: #D6D5F2ff;
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--midnight-violet);
+    background-image: radial-gradient(
+        ellipse 60% 40% at 50% 0%,
+        var(--deep-navy),
+        transparent 70%
+    );
+    color: var(--lavender);
+    font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+    font-optical-sizing: auto;
+    line-height: 1.6;
+}
+
+.profile_card {
+    max-width: 30%;
+    margin: 0 auto;
+    border: 2px solid red;
+    border: 1px solid var(--twilight-indigo);
+    border-radius: 50px;
+    box-shadow:0 24px 60px var(--midnight-violet);
+    margin-top: 5em;
+}
+
+.image--container{
+    max-width: 90%;
+    margin:0 auto;
+    margin-top: 2em;
+}
+
+.profile_card--image {
+    display: inline-block;
+    max-width: 100%;
+    border-radius: 50px;
+    object-position: center;
+}
+
+.profile--card--section {
+    max-width: 80%;
+    margin: 0 auto;
+    line-height: 2.5em;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.profile--card--social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block: 2em;
+    font-size: 1.5rem;
+}
+
+.profile--card--social--btn {
+    cursor: pointer;
+    padding: 1em 2em;
+    border: 2px solid var(--soft-periwinkle);
+    border-radius: 10px;
+    font-size: 1.5rem;
+    background-color: var(--soft-periwinkle);
+    transition: all 200ms ease-in-out;
+    text-decoration: none;
+    color: var(--lavender);
+}
+
+.profile--card--social--btn:hover {
+    background-color: var(--twilight-indigo);
+    border: 3px solid var(--soft-periwinkle);
+}
+
+/* Small laptops */
+@media (max-width: 1200px) {
+    .profile_card {
+        max-width: 40%;
+    }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    .profile_card {
+        max-width: 60%;
+        margin-top: 3em;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+    .profile_card {
+        max-width: 90%;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        border-radius: 32px;
+    }
+
+    .image--container {
+        max-width: 92%;
+        margin-top: 1em;
+    }
+
+    .profile_card--image {
+        border-radius: 32px;
+    }
+
+    .profile--card--section {
+        max-width: 88%;
+        line-height: 1.8em;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .profile--card--social {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1em;
+        margin-block: 1.5em;
+    }
+
+    .profile--card--social--btn {
+        padding: 0.8em 1.2em;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+    .profile_card {
+        max-width: 94%;
+        border-radius: 24px;
+    }
+
+    .profile_card--image {
+        border-radius: 24px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+}

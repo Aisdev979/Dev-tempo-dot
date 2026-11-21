@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0d2b2a" />
+
+    <title>Campus Resolve - Waitlist</title>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body class="waitlist-page">
+    <header class="site-header">
+      <a class="site-header__brand" href="#">Campus Resolve</a>
+    </header>
+
+    <main class="waitlist-main">
+      <div class="waitlist-form__status waitlist-form__status-success" id="waitlist-form__status">
+        <h2>SUCCESS</h2>
+        <P>You have successfully join the waiting list, we will notify you when the application launches...</P>
+      </div>
+      <div class="waitlist-container">
+        <section class="waitlist-hero">
+            <h1 class="waitlist-hero__title">Join the Waitlist</h1>
+            <p class="waitlist-hero__description">
+            Join the pilot program for our centralized resolution engine.
+            Transparent tracking for students, priority escalation workflows for
+            Course Reps, and automated department reporting.
+            </p>
+        </section>
+
+        <form class="waitlist-form" id="waitlist-form" novalidate>
+            <div class="form-field">
+            <label class="form-field__label" for="full-name">
+                Full name <span aria-hidden="true">*</span>
+            </label>
+            <input
+                class="form-field__input"
+                type="text"
+                id="full-name"
+                name="fullName"
+                autocomplete="name"
+                required
+                aria-describedby="full-name-error"
+                placeholder="John Doe"
+            />
+            <p class="form-field__error" id="full-name-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field">
+            <label class="form-field__label" for="email">
+                Email <span aria-hidden="true">*</span>
+            </label>
+            <input
+                class="form-field__input"
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+                aria-describedby="email-error"
+                placeholder="text@gmail.com"
+            />
+            <p class="form-field__error" id="email-error" aria-live="polite"></p>
+            </div>
+
+            <button class="btn btn--primary" type="submit" id="waitlist-submit-btn">
+            Join waitlist
+            </button>
+        </form>
+      </div>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
