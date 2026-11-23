@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- Engineered by Omonire (github.com/omonire) -->
+<!-- Challenge 007 - JavaScript Fetch API (ProvChart) -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ProvChart Fetch Challenge</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- The API returns CSS as text. main.js will place that text in this style tag. -->
+  <style id="chartStyle"></style>
+</head>
+<body>
+  <main class="page">
+    <h1>ProvChart Fetch Challenge</h1>
+    <p>Paste your API key, then ask ProvChart to draw a small bar chart.</p>
+
+    <div class="card">
+      <!-- The key is typed at runtime, so it does not need to be stored in the code. -->
+      <label for="apiKeyInput">API key</label>
+      <input id="apiKeyInput" type="password" placeholder="Paste your ProvChart API key">
+
+      <button id="generateButton" type="button">Generate chart</button>
+
+      <!-- Messages about success or failure are written here by JavaScript. -->
+      <p id="message" role="alert"></p>
+    </div>
+
+    <!-- The returned chart HTML is placed here by JavaScript. -->
+    <section id="chartOutput" class="chart-output"></section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

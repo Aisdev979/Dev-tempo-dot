@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- Engineered by Omonire (github.com/omonire) -->
+<!-- Challenge 007 - HTML Resizable Div -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resizable Box</title>
+  <style>
+    /* The body is a flex container. Flexbox makes it simple to place the box
+       in the middle of the screen, both across and down. */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #eef1f5;
+      font-family: system-ui, sans-serif;
+    }
+
+    /* This is the box the user can drag to resize.
+       - resize: both allows width and height changes.
+       - overflow: auto is required before CSS resize can work.
+       - min-width and min-height stop the box from becoming too small. */
+    .box {
+      width: 260px;
+      height: 180px;
+      min-width: 150px;
+      min-height: 100px;
+      resize: both;
+      overflow: auto;
+      border: 2px solid #333;
+      border-radius: 10px;
+      padding: 16px;
+      background: #ffffff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .box h1 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Resize me</h1>
+    <p>Drag the bottom-right corner to make this box bigger or smaller.</p>
+    <p>The minimum size is 150 by 100 pixels.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/* Engineered by Omonire (github.com/omonire) */
+/* Challenge 007 - JavaScript Fetch API (ProvChart) */
+
+/* Keep the page narrow so the chart is easy to read. */
+body {
+  margin: 0;
+  padding: 32px 16px;
+  background: #eef1f5;
+  color: #1d2433;
+  font-family: system-ui, sans-serif;
+}
+
+.page {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card {
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #d7dce5;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #9aa4b2;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+button {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #0b6bcb;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0955a1;
+}
+
+button:disabled {
+  background: #8aa7c4;
+  cursor: not-allowed;
+}
+
+/* Message colours make the result clear without needing extra words. */
+#message {
+  min-height: 20px;
+  font-weight: 700;
+}
+
+#message.error {
+  color: #b00020;
+}
+
+#message.success {
+  color: #0a7a32;
+}
+
+#message.info {
+  color: #0b6bcb;
+}
+
+/* This box holds the chart HTML that comes back from the API. */
+.chart-output {
+  min-height: 320px;
+  margin-top: 20px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #d7dce5;
+  border-radius: 12px;
+}
