@@ -1,9 +1,13 @@
 import requests
+import os
 url = "https://provchart-api.devtem.org/api/v1/generate"
+api = os.getenv("ProvChart_API_KEY")
+if not api:
+  raise ValueError("API KEY MISSING!!!!")
 headers = {
-  "X-API-Key": "pc_live_qqtsq10tqpe19izmonv2w2fl" ,
+  "X-API-Key": api,
   "Content-Type": "application/json"
-}
+} 
 data = {
   "type" : "bar",
   "theme" :{
@@ -36,3 +40,4 @@ try:
 
 except requests.exceptions.RequestException as error:
     print("Request failed:", error)
+    print(error.response.text if error.response else error)
