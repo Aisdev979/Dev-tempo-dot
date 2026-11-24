@@ -1,7 +1,7 @@
 import requests
 url = "https://provchart-api.devtem.org/api/v1/generate"
 headers = {
-  "X-API-Key": "my_api_key" ,
+  "X-API-Key": "pc_live_qqtsq10tqpe19izmonv2w2fl" ,
   "Content-Type": "application/json"
 }
 data = {
