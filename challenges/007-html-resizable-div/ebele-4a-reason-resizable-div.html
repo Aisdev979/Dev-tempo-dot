@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang ="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resizeable Box</title>
+  <style>
+    .box{
+      width: 300px;
+      height: 300px;
+      border: 2px solid black;
+      border-radius: 9px;
+      padding: 10px;
+      resize: both;
+      overflow: auto;
+      background-color: midnightblue;
+      min-width: 150px;
+      min-height: 150px;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div class = "box">
+    <h3 class="head">RESIZEABLE BOX</h3>
+    <p class="paragraph"> A box that can be resized by dragging the edges</p>
+    
+  </div>
+</body>
+
+</html>
