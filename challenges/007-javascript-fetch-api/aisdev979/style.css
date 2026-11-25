@@ -293,6 +293,14 @@
     height: 27px;
 }
 
+.chart-result-empty[hidden] {
+    display: none;
+}
+
+.chart-output {
+    width: 100%;
+}
+
 /* LOADING STATE */
 
 .chart-result-loading {
