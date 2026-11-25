@@ -1,0 +1,40 @@
+name: Repo stats charts
+
+on:
+  schedule:
+    - cron: "0 8 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  charts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check secret
+        env:
+          KEY: ${{ secrets.PROVCHART_API_KEY }}
+        run: |
+          if [ -z "$KEY" ]; then
+            echo "::error::PROVCHART_API_KEY is empty"
+            exit 1
+          fi
+          echo "Secret OK (length ${#KEY})"
+
+      - uses: fscss-ttr/provchart-repo-stats@v1.3
+        with:
+          api-key: ${{ secrets.PROVCHART_API_KEY }}
+          overview-type: "bar" 
+          languages-type: "radar"
+        env:
+          PROVCHART_API_KEY: ${{ secrets.PROVCHART_API_KEY }}
+          INPUT_LANGUAGES_TYPE: "radar"
+          INPUT_OVERVIEW_TYPE: "area"
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update repo stats charts"
+          file_pattern: "docs/charts/*.svg"
