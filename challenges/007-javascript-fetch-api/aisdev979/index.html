@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>Aischart - Pro Data Analyzer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body class="chart-config-page">
+    <main class="chart-config-main">
+      <div class="chart-config-layout">
+        <!-- FORM SECTION -->
+        <section class="chart-config-container">
+          <header class="chart-config-header">
+            <h1 class="chart-config-title">Data to Chart Analyzer</h1>
+
+            <p class="chart-config-description">
+              Enter your API key and select a chart type to visualize your data.
+            </p>
+          </header>
+
+          <form class="chart-config-form" id="chart-config-form">
+            <!-- API KEY -->
+            <div class="chart-config-field">
+              <label class="chart-config-label" for="api-key-input">
+                API Key <span>*</span>
+              </label>
+
+              <input
+                class="chart-config-input"
+                type="password"
+                id="api-key-input"
+                name="apiKey"
+                placeholder="pc_live_jq..."
+                autocomplete="off"
+                required
+              />
+              <p class="api-input-error" id="api-input-error"></p>
+            </div>
+
+            <!-- CHART TYPE -->
+            <div class="chart-config-field">
+              <label class="chart-config-label" for="chart-type-select">
+                Type
+              </label>
+
+              <div class="chart-type-select-wrapper">
+                <select
+                  class="chart-type-select"
+                  id="chart-type-select"
+                  name="chartType"
+                >
+                  <option value="line">Line</option>
+                  <option value="area">Area</option>
+                  <option value="bar" selected>Bar (vertical)</option>
+                  <option value="horizontal-bar">Bar (horizontal)</option>
+                  <option value="stacked-bar">Stacked bar</option>
+                  <option value="scatter">Scatter</option>
+                  <option value="combo">Combo (bar + line)</option>
+                  <option value="radar">Radar</option>
+                  <option value="gauge">Gauge</option>
+                </select>
+
+                <span class="chart-type-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M6 9L12 15L18 9"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <button
+              class="chart-config-submit"
+              type="submit"
+              id="chart-config-submit"
+            >
+              Generate Chart
+            </button>
+          </form>
+        </section>
+
+        <!-- RESULT SECTION -->
+        <section class="chart-result-container">
+          <header class="chart-result-header">
+            <h2 class="chart-result-title">View Result</h2>
+          </header>
+
+          <div
+            class="chart-config-status"
+            id="chart-config-status"
+            aria-live="polite"
+            aria-busy="false"
+          >
+            <!-- LOADING STATE -->
+            <div class="chart-result-loading" hidden>
+              <span class="chart-result-spinner"></span>
+
+              <span class="chart-result-loading-text">
+                Generating your chart...
+              </span>
+            </div>
+
+            <!-- EMPTY STATE -->
+            <div class="chart-result-empty">
+              <span class="chart-result-empty-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M4 19V5M4 19H21M8 16V11M13 16V7M18 16V4"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+
+              <p>Your chart result will appear here.</p>
+            </div>
+
+            <!-- API RESULT WILL REPLACE THIS CONTENT -->
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>
