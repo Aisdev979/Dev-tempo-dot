@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CJ Studio | Resizable Box</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #080b09;
+  color: #f1f5f1;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.header {
+  margin-bottom: 25px;
+}
+
+.logo {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.logo .cj {
+  color: #65e692;
+}
+
+.logo .studio {
+  color: #f1f5f1;
+}
+
+.header h1 {
+  font-size: 27px;
+  margin-bottom: 8px;
+  color: #f5f7f5;
+}
+
+.header p {
+  color: #929b92;
+  font-size: 14px;
+}
+
+.card {
+  background: #111611;
+  border: 1px solid #202a21;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+}
+
+.workspace {
+  width: 100%;
+  height: 460px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #263128;
+  border-radius: 18px;
+  background: #090d0a;
+  touch-action: none;
+}
+
+.box {
+  width: 300px;
+  height: 230px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #18211a;
+  border: 1px solid #354b39;
+  border-radius: 20px;
+  box-shadow:
+    0 0 25px rgba(77, 220, 123, 0.09),
+    0 15px 40px rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  user-select: none;
+}
+
+.box-content {
+  text-align: center;
+  pointer-events: none;
+}
+
+.box-content .tag {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #65e692;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.box-content h2 {
+  font-size: 21px;
+  margin-bottom: 8px;
+  color: #f4f7f4;
+}
+
+.box-content p {
+  color: #a1ada2;
+  font-size: 12px;
+}
+
+/* Invisible resize handles */
+
+.handle {
+  position: absolute;
+  z-index: 10;
+  touch-action: none;
+}
+
+.tl {
+  top: -8px;
+  left: -8px;
+  width: 24px;
+  height: 24px;
+  cursor: nwse-resize;
+}
+
+.tr {
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  cursor: nesw-resize;
+}
+
+.bl {
+  bottom: -8px;
+  left: -8px;
+  width: 24px;
+  height: 24px;
+  cursor: nesw-resize;
+}
+
+.br {
+  bottom: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  cursor: nwse-resize;
+}
+
+.t {
+  top: -5px;
+  left: 20px;
+  right: 20px;
+  height: 12px;
+  cursor: ns-resize;
+}
+
+.b {
+  bottom: -5px;
+  left: 20px;
+  right: 20px;
+  height: 12px;
+  cursor: ns-resize;
+}
+
+.l {
+  left: -5px;
+  top: 20px;
+  bottom: 20px;
+  width: 12px;
+  cursor: ew-resize;
+}
+
+.r {
+  right: -5px;
+  top: 20px;
+  bottom: 20px;
+  width: 12px;
+  cursor: ew-resize;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.size-display {
+  font-size: 13px;
+  color: #a0aaa1;
+}
+
+.size-display strong {
+  color: #65e692;
+}
+
+button {
+  border: 1px solid #33533b;
+  background: #18251a;
+  color: #75e69b;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s;
+}
+
+button:hover {
+  background: #223426;
+  border-color: #65e692;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.footer {
+  text-align: center;
+  color: #687369;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 14px;
+  }
+
+  .header h1 {
+    font-size: 23px;
+  }
+
+  .workspace {
+    height: 400px;
+  }
+
+  .box {
+    width: 260px;
+    height: 200px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <header class="header">
+    <div class="logo">
+      <span class="cj">CJ</span>
+      <span class="studio"> STUDIO</span>
+    </div>
+
+    <h1>Interactive Components</h1>
+    <p>Explore, resize and move the element around.</p>
+  </header>
+
+  <main class="card">
+
+    <div class="workspace" id="workspace">
+
+      <div class="box" id="box">
+
+        <div class="box-content">
+          <div class="tag">CJ COMPONENT</div>
+          <h2>Resizable Box</h2>
+          <p>Drag the edges or hold to move</p>
+        </div>
+
+        <div class="handle tl" data-dir="tl"></div>
+        <div class="handle tr" data-dir="tr"></div>
+        <div class="handle bl" data-dir="bl"></div>
+        <div class="handle br" data-dir="br"></div>
+        <div class="handle t" data-dir="t"></div>
+        <div class="handle b" data-dir="b"></div>
+        <div class="handle l" data-dir="l"></div>
+        <div class="handle r" data-dir="r"></div>
+
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="size-display">
+        Dimensions: <strong id="dimensions">300 × 230</strong>
+      </div>
+
+      <button id="reset">Reset Dimensions</button>
+    </div>
+
+  </main>
+
+  <div class="footer">
+    CJ Studio · Interactive UI Experiment
+  </div>
+
+</div>
+
+<script>
+const box = document.getElementById("box");
+const workspace = document.getElementById("workspace");
+const dimensions = document.getElementById("dimensions");
+const reset = document.getElementById("reset");
+
+let state = null;
+let holdTimer = null;
+let holdTriggered = false;
+
+const MIN_W = 140;
+const MIN_H = 110;
+
+function clamp(value, min, max) {
+  return Math.max(min, Math.min(value, max));
+}
+
+function getBounds() {
+  const w = workspace.getBoundingClientRect();
+  const b = box.getBoundingClientRect();
+
+  return {
+    left: b.left - w.left - workspace.clientLeft,
+    top: b.top - w.top - workspace.clientTop,
+    width: b.width,
+    height: b.height
+  };
+}
+
+function updateDimensions() {
+  dimensions.textContent =
+    `${Math.round(box.offsetWidth)} × ${Math.round(box.offsetHeight)}`;
+}
+
+function convertToAbsolute() {
+  const b = getBounds();
+
+  box.style.transform = "none";
+  box.style.left = `${b.left}px`;
+  box.style.top = `${b.top}px`;
+}
+
+function resetBox() {
+  box.style.width = "300px";
+  box.style.height = "230px";
+  box.style.left = "";
+  box.style.top = "";
+  box.style.transform = "translate(-50%, -50%)";
+
+  updateDimensions();
+}
+
+function startResize(e, dir) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  clearTimeout(holdTimer);
+  holdTriggered = false;
+
+  convertToAbsolute();
+
+  const b = getBounds();
+
+  state = {
+    type: "resize",
+    dir,
+    startX: e.clientX,
+    startY: e.clientY,
+    startW: b.width,
+    startH: b.height,
+    startL: b.left,
+    startT: b.top
+  };
+
+  box.setPointerCapture(e.pointerId);
+}
+
+function resizeBox(e) {
+  if (!state || state.type !== "resize") return;
+
+  const dx = e.clientX - state.startX;
+  const dy = e.clientY - state.startY;
+  const dir = state.dir;
+
+  let w = state.startW;
+  let h = state.startH;
+  let l = state.startL;
+  let t = state.startT;
+
+  if (dir.includes("r")) {
+    w = Math.max(MIN_W, state.startW + dx);
+  }
+
+  if (dir.includes("l")) {
+    w = Math.max(MIN_W, state.startW - dx);
+    l = state.startL + state.startW - w;
+  }
+
+  if (dir.includes("b")) {
+    h = Math.max(MIN_H, state.startH + dy);
+  }
+
+  if (dir.includes("t")) {
+    h = Math.max(MIN_H, state.startH - dy);
+    t = state.startT + state.startH - h;
+  }
+
+  const maxW = workspace.clientWidth;
+  const maxH = workspace.clientHeight;
+
+  w = Math.min(w, maxW);
+  h = Math.min(h, maxH);
+
+  l = clamp(l, 0, maxW - w);
+  t = clamp(t, 0, maxH - h);
+
+  box.style.width = `${w}px`;
+  box.style.height = `${h}px`;
+  box.style.left = `${l}px`;
+  box.style.top = `${t}px`;
+
+  updateDimensions();
+}
+
+function startMove(e) {
+  if (e.target.closest(".handle")) return;
+
+  e.preventDefault();
+
+  clearTimeout(holdTimer);
+  holdTriggered = false;
+
+  const b = getBounds();
+
+  const startX = e.clientX;
+  const startY = e.clientY;
+
+  holdTimer = setTimeout(() => {
+    holdTriggered = true;
+
+    convertToAbsolute();
+
+    state = {
+      type: "move",
+      startX,
+      startY,
+      startL: b.left,
+      startT: b.top,
+      boxW: b.width,
+      boxH: b.height
+    };
+
+    box.setPointerCapture(e.pointerId);
+  }, 180);
+}
+
+function moveBox(e) {
+  if (!state || state.type !== "move") return;
+
+  const dx = e.clientX - state.startX;
+  const dy = e.clientY - state.startY;
+
+  const maxL = workspace.clientWidth - state.boxW;
+  const maxT = workspace.clientHeight - state.boxH;
+
+  box.style.left = `${clamp(state.startL + dx, 0, maxL)}px`;
+  box.style.top = `${clamp(state.startT + dy, 0, maxT)}px`;
+}
+
+box.addEventListener("pointerdown", startMove);
+
+document.querySelectorAll(".handle").forEach(handle => {
+  handle.addEventListener("pointerdown", e => {
+    startResize(e, handle.dataset.dir);
+  });
+});
+
+box.addEventListener("pointermove", e => {
+  if (state?.type === "resize") resizeBox(e);
+  if (state?.type === "move") moveBox(e);
+});
+
+document.addEventListener("pointermove", e => {
+  if (state?.type === "resize") resizeBox(e);
+  if (state?.type === "move") moveBox(e);
+});
+
+document.addEventListener("pointerup", () => {
+  clearTimeout(holdTimer);
+  state = null;
+  holdTriggered = false;
+});
+
+document.addEventListener("pointercancel", () => {
+  clearTimeout(holdTimer);
+  state = null;
+  holdTriggered = false;
+});
+
+reset.addEventListener("click", resetBox);
+
+updateDimensions();
+</script>
+
+</body>
+</html>
