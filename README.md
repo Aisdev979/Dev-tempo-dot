@@ -6,6 +6,11 @@ A space to vibe, learn, build, experiment, and level up through practical challe
 
 ---
 
+![Repo overview](./docs/charts/repo-overview.svg)
+![Languages](./docs/charts/languages.svg)
+
+---
+
 ## What is this repo?
 
 This is the official training ground for members of the Development Playground.
