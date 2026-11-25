@@ -12,16 +12,19 @@ const emptyStateMessage = emptyState.querySelector("p");
 
 const CHART_API_URL = "https://provchart-api.devtem.org/api/v1/generate";
 
-// The API returns the chart's HTML and CSS separately, so the CSS gets its
-// own <style> tag and the HTML gets a container inside the result panel
+/* The API returns the chart's HTML and CSS separately, so the CSS gets its
+  own <style> tag and the HTML gets a container inside the result panel
+*/
 const chartStyleTag = document.createElement("style");
 const chartOutput = document.createElement("div");
 chartOutput.className = "chart-output";
 
+//append chartStyleTag on the html head
 document.head.appendChild(chartStyleTag);
+//append the returned data to resultPanel
 resultPanel.appendChild(chartOutput);
 
-// Request
+// Making Request to provchart api - POST method
 const fetchChart = async (apiKey, chartType) => {
   const response = await fetch(CHART_API_URL, {
     method: "POST",
@@ -32,7 +35,6 @@ const fetchChart = async (apiKey, chartType) => {
     body: JSON.stringify({
       type: chartType,
       theme: "midnight",
-      // Sample data until the user can supply their own
       series: [
         {
           name: "Scores",
@@ -53,7 +55,7 @@ const fetchChart = async (apiKey, chartType) => {
   return result;
 };
 
-// Validation
+// Validation api key input field
 const validateInputs = (apiKey) => {
   const errors = {};
 
@@ -62,7 +64,10 @@ const validateInputs = (apiKey) => {
   return errors;
 };
 
-// Result panel
+/* Result panel
+this is a state that when a use use click the button the loading is pass to the state and when loading = loading it shows the loading spinner
+same concept for empty and chartOutput
+*/
 const setResultState = (state) => {
   loadingState.hidden = state !== "loading";
   emptyState.hidden = state !== "empty";
@@ -70,29 +75,35 @@ const setResultState = (state) => {
   resultPanel.setAttribute("aria-busy", state === "loading");
 };
 
+/*
+As showing in the above comment, this shows empty error message when empty = empty whil the others are hidden
+*/
 const showResultError = (message) => {
   emptyStateMessage.textContent = message;
   setResultState("empty");
 };
 
+//display the result html and css on the UI
 const displayChart = ({ html, css }) => {
   chartStyleTag.textContent = css;
   chartOutput.innerHTML = html;
   setResultState("chart");
 };
 
-// Form
+// Listen for an event
 chartForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const apiKey = apiKeyInput.value.trim();
   const errors = validateInputs(apiKey);
 
+  //this display the custom error if it is not undefined or null otherwise it display and empty string
   apiKeyError.textContent = errors.apiKey ?? "";
-  if (Object.keys(errors).length > 0) return;
 
+  //same state rule as demonstrated above
   setResultState("loading");
-  // Free keys only get a handful of generations, so block double clicks
+  
+  // Blocking double clicks
   generateButton.disabled = true;
 
   try {
@@ -101,8 +112,10 @@ chartForm.addEventListener("submit", async (event) => {
   } catch (error) {
     showResultError(error.message);
   } finally {
+    //this allow use make another request instead of completely blocking the button
     generateButton.disabled = false;
   }
 });
 
+//same concept as discuss above
 setResultState("empty");
